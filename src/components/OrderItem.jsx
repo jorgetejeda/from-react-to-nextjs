@@ -14,11 +14,11 @@ const OrderItem = ({ product }) => {
   return (
     <div className={styles.OrderItem}>
       <figure>
-        <Image src={product.images[0]} alt={product.title} />
+        <Image src={product?.images[0]} alt={product?.title} />
       </figure>
-      <p>{product.title}</p>
-      <p>${product.price}</p>
-      <Image src={close} alt="close" onClick={() => handleRemove(product)} />
+      <p>{product?.title}</p>
+      <p>${product?.price}</p>
+      <Image className={(styles.pointer, styles, ['more-clickable-area'])} src={close} alt="close" onClick={() => handleRemove(product)} />
     </div>
   );
 };
