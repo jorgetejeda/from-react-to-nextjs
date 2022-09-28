@@ -16,13 +16,13 @@ const OrderItem = ({ product }) => {
       {product.images[0] && (
         <>
           <figure>
-            <Image src={product.images[0]} alt={product.title} />
+            <Image width={70} height={70} src={product.images[0]} alt={product.title} />
           </figure>
           <p>{product.title}</p>
           <p>${product.price}</p>
         </>
       )}
-      <Image className={(styles.pointer, styles, ['more-clickable-area'])} src={close} alt="close" onClick={() => handleRemove(product)} />
+      <Image className={styles.pointer} src={close} alt="close" onClick={() => handleRemove(product)} />
     </div>
   );
 };
