@@ -16,11 +16,19 @@ const Header = () => {
 
   const handleToggle = () => {
     setToggle(!toggle);
+    toggle && setToggleOrders(false);
+  };
+
+  const handleToggleOrders = () => {
+    setToggleOrders(!toggleOrders);
+    toggleOrders && setToggle(false);
   };
 
   return (
     <nav className={styles.Nav}>
-      <img src={menu.src} alt="menu" className={styles.menu} />
+      <div className={styles.menu}>
+        <Image src={menu.src} alt="menu" width={25} height={60} />
+      </div>
       <div className={styles['navbar-left']}>
         <Link href="/">
           <Image src={logo} alt="logo" className={styles['nav-logo']} />
@@ -51,7 +59,7 @@ const Header = () => {
           <li className={styles['navbar-email']} onClick={handleToggle}>
             platzi@example.com
           </li>
-          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
+          <li className={styles['navbar-shopping-cart']} onClick={handleToggleOrders}>
             <Image src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
