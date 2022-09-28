@@ -13,7 +13,7 @@ const OrderItem = ({ product }) => {
 
   return (
     <div className={styles.OrderItem}>
-      {product.images[0] && (
+      {product && (
         <>
           <figure>
             <Image width={70} height={70} src={product.images[0]} alt={product.title} />
