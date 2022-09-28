@@ -30,28 +30,28 @@ const Header = () => {
             <Link href="/">All</Link>
           </li>
           <li>
-            <a href="/">Clothes</a>
+            <Link href="/">Clothes</Link>
           </li>
           <li>
-            <a href="/">Electronics</a>
+            <Link href="/">Electronics</Link>
           </li>
           <li>
-            <a href="/">Furnitures</a>
+            <Link href="/">Furnitures</Link>
           </li>
           <li>
-            <a href="/">Toys</a>
+            <Link href="/">Toys</Link>
           </li>
           <li>
-            <a href="/">Others</a>
+            <Link href="/">Others</Link>
           </li>
         </ul>
       </div>
       <div className={styles['navbar-right']}>
         <ul>
-          <li className={styles['navbar-email']} onClick={handleToggle}>
+          <li className={styles['navbar-email']} onKeyPress={handleToggle}>
             platzi@example.com
           </li>
-          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
+          <li className={styles['navbar-shopping-cart']} onKeyPress={() => setToggleOrders(!toggleOrders)}>
             <Image src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>

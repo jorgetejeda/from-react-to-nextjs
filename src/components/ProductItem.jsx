@@ -22,7 +22,7 @@ const ProductItem = ({ product }) => {
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure className={styles['more-clickable-area']} onClick={() => handleClick(product)}>
+        <figure className={styles['more-clickable-area']} onKeyPress={() => handleClick(product)}>
           {state.cart.includes(product) ? (
             <Image className={styles['disabled add-to-cart-btn']} src={addedToCartImage} alt="added to cart" />
           ) : (
