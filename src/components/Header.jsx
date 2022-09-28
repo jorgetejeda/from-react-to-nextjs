@@ -48,10 +48,10 @@ const Header = () => {
       </div>
       <div className={styles['navbar-right']}>
         <ul>
-          <li className={styles['navbar-email']} onKeyPress={handleToggle}>
+          <li className={styles['navbar-email']} onClick={handleToggle}>
             platzi@example.com
           </li>
-          <li className={styles['navbar-shopping-cart']} onKeyPress={() => setToggleOrders(!toggleOrders)}>
+          <li className={styles['navbar-shopping-cart']} onClick={() => setToggleOrders(!toggleOrders)}>
             <Image src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
