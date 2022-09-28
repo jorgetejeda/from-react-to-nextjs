@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import OrderItem from '@components/OrderItem';
 import AppContext from '../context/AppContext';
 import arrow from '@icons/flechita.svg';
@@ -20,7 +21,7 @@ const MyOrder = () => {
         <Image src={arrow} alt="arrow" />
         <p className={styles.title}>My order</p>
       </div>
-      <div className={styles[my - order - content]}>
+      <div className={styles['my-order-content']}>
         {state.cart.map((product) => (
           <OrderItem product={product} key={`orderItem-${product.id}`} />
         ))}
@@ -30,7 +31,9 @@ const MyOrder = () => {
           </p>
           <p>${sumTotal()}</p>
         </div>
-        <button className={styles['primary-button']}>Checkout</button>
+        <Link className={styles['primary-button']} href="/checkout">
+          Checkout
+        </Link>
       </div>
     </aside>
   );
