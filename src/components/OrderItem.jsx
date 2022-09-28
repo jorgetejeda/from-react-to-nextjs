@@ -13,11 +13,15 @@ const OrderItem = ({ product }) => {
 
   return (
     <div className={styles.OrderItem}>
-      <figure>
-        <Image src={product?.images[0]} alt={product?.title} />
-      </figure>
-      <p>{product?.title}</p>
-      <p>${product?.price}</p>
+      {product.images[0] && (
+        <>
+          <figure>
+            <Image src={product.images[0]} alt={product.title} />
+          </figure>
+          <p>{product.title}</p>
+          <p>${product.price}</p>
+        </>
+      )}
       <Image className={(styles.pointer, styles, ['more-clickable-area'])} src={close} alt="close" onClick={() => handleRemove(product)} />
     </div>
   );
